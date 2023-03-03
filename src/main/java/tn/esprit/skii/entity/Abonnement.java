@@ -18,9 +18,9 @@ public class Abonnement implements Serializable {
     private long idAbonnement; // Clé primaire
     private Integer numAbon;
     @Temporal(TemporalType.DATE)
-    private Date DateDebut;
+    private Date dateDebut;
     @Temporal(TemporalType.DATE)
-    private Date DateFin;
+    private Date dateFin;
     private float prixAbon;
 
     @Enumerated(EnumType.STRING)

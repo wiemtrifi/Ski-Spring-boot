@@ -24,12 +24,12 @@ public class Skieur implements Serializable {
     private String prenomS;
     @Temporal(TemporalType.DATE)
     private Date dateNaissance ;
-    private String Ville;
+    private String ville;
     @OneToMany(cascade = CascadeType.ALL, mappedBy="skieurs")
-    private Set<Inscription> Inscription;
+    private Set<Inscription> inscription;
 
     @ManyToMany(mappedBy="skieurs", cascade = CascadeType.ALL)
-    private Set<Piste> Pistes;
+    private Set<Piste> pistes;
 
     @OneToOne
     private Abonnement abonnements;

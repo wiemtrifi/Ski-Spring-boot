@@ -15,8 +15,14 @@ public interface PisteRepository extends JpaRepository<Piste, Long> {
             + " INNER JOIN Inscription inscp"
             + " where inscp.cours.typeCours = 'snowboard'"
           )
-    List<Piste> coursskieur(@Param("snowboard")
-                                String typeCours);
+    List<Piste> coursskieur(@Param("snowboard")String typeCours);
+
+    @Query("SELECT piste FROM Piste piste"
+            + " INNER JOIN piste.skieurs skieur"
+            + " INNER JOIN Inscription inscp"
+            + " where inscp.numSemaine= :dd "
+    )
+    List<Piste> pistesemaines(@Param("dd") int sem);
 
 
 

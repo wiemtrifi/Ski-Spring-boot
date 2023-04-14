@@ -31,6 +31,6 @@ public class Skieur implements Serializable {
     @ManyToMany(mappedBy="skieurs", cascade = CascadeType.ALL)
     private Set<Piste> pistes;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Abonnement abonnements;
 }
